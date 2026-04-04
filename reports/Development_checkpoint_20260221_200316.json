@@ -1,0 +1,28 @@
+{
+  "specs": {},
+  "functional_spec_count": {},
+  "testsuites": [
+    {
+      "cases": [
+        {
+          "classname": "POM and data driven testing task 15.test_checking_login",
+          "name": "test_login_scenario",
+          "developer": "-",
+          "test_description": "",
+          "status": "Failed",
+          "logs": "<ul style='list-style-type: none; padding: 0;'></ul>",
+          "details": "Message: AttributeError: 'Login' object has no attribute 'login_'\nDetails: def test_login_scenario():\n        launch_browser = Browser()\n        firefox_browser = launch_browser.invoke_browser()\n        user_login = Login(firefox_browser)\n        user_login.navigate_url()\n>       url_of_page = user_login.login_()\n                      ^^^^^^^^^^^^^^^^^\nE       AttributeError: 'Login' object has no attribute 'login_'\n\nPOM and data driven testing task 15\\test_checking_login.py:9: AttributeError",
+          "functional_specifications": [],
+          "categories": []
+        }
+      ]
+    }
+  ],
+  "test_environment": "Development",
+  "timestamp": "21 Feb 2026, 20:03",
+  "img_url": "https://icon.icepanel.io/Technology/svg/pytest.svg",
+  "test_status": "complete",
+  "report_title": "pytest HTML Report",
+  "category_count": {},
+  "all_categories": []
+}
