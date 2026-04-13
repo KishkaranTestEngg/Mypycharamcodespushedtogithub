@@ -1,24 +1,260 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-04-04T10:00:30.512351" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.2 on win32)" generated="2026-04-13T22:56:18.490191" rpa="false" schemaversion="5">
 <suite id="s1" name="Virtualenvironment" source="D:\Pythonallprojectsautomationwork\virtualenvironment">
 <suite id="s1-s1" name="Mythirdrobotframeworktask20guvi" source="D:\Pythonallprojectsautomationwork\virtualenvironment\Mythirdrobotframeworktask20guvi.robot">
-<test id="s1-s1-t1" line="12">
-<status status="FAIL" start="2026-04-04T10:00:30.879075" elapsed="0.001099">Test name cannot be empty.</status>
+<test id="s1-s1-t1" name="Login and verify with Valid Credentials Add multiple products to cart and proceed to checkout and verify the quantities in checkout" line="25">
+<kw name="Login and verify with Valid Credentials Add multiple products to cart and proceed to checkout and verify the quantities in checkout keyword">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:18.678522" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-13T22:56:18.678293" elapsed="5.430018"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-04-13T22:56:24.108626" elapsed="0.275519"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:24.384735" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:24.384334" elapsed="0.045609"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:24.430420" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:24.430155" elapsed="0.018598"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:24.449222" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:24.448988" elapsed="0.084512"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:24.534196" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2026-04-13T22:56:29.607597" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-13T22:56:29.607754" level="FAIL">Alert not found in 5 seconds.</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="FAIL" start="2026-04-13T22:56:24.534079" elapsed="5.075203">Alert not found in 5 seconds.</status>
+</kw>
+<arg>Handle Alert</arg>
+<arg>action=ACCEPT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-04-13T22:56:24.533683" elapsed="5.075695"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.614005" level="INFO">Current page contains text 'Products'.</msg>
+<arg>Products</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.609485" elapsed="0.004589"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=add-to-cart-${product}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.614426" elapsed="0.007688"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.622472" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-backpack'.</msg>
+<arg>id=add-to-cart-${product}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.622262" elapsed="0.063164"/>
+</kw>
+<var name="${product}">sauce-labs-backpack</var>
+<status status="PASS" start="2026-04-13T22:56:29.614330" elapsed="0.071175"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=add-to-cart-${product}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.685751" elapsed="0.007851"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.693979" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-bike-light'.</msg>
+<arg>id=add-to-cart-${product}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.693761" elapsed="0.061358"/>
+</kw>
+<var name="${product}">sauce-labs-bike-light</var>
+<status status="PASS" start="2026-04-13T22:56:29.685649" elapsed="0.069547"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=add-to-cart-${product}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.755424" elapsed="0.007422"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.763235" level="INFO">Clicking button 'id=add-to-cart-sauce-labs-bolt-t-shirt'.</msg>
+<arg>id=add-to-cart-${product}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.763024" elapsed="0.061594"/>
+</kw>
+<var name="${product}">sauce-labs-bolt-t-shirt</var>
+<status status="PASS" start="2026-04-13T22:56:29.755327" elapsed="0.069369"/>
+</iter>
+<var>${product}</var>
+<value>@{PRODUCTS}</value>
+<status status="PASS" start="2026-04-13T22:56:29.614155" elapsed="0.210585"/>
+</for>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.825039" level="INFO">Clicking element 'xpath=//a[@class='shopping_cart_link']'.</msg>
+<arg>xpath=//a[@class='shopping_cart_link']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.824872" elapsed="0.065568"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.892981" level="INFO">Current page contains element 'xpath=//div[text()='Sauce Labs Backpack']'.</msg>
+<arg>xpath=//div[text()='${name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.890811" elapsed="0.002253"/>
+</kw>
+<var name="${name}">Sauce Labs Backpack</var>
+<status status="PASS" start="2026-04-13T22:56:29.890717" elapsed="0.002412"/>
+</iter>
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.895224" level="INFO">Current page contains element 'xpath=//div[text()='Sauce Labs Bike Light']'.</msg>
+<arg>xpath=//div[text()='${name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.893335" elapsed="0.001955"/>
+</kw>
+<var name="${name}">Sauce Labs Bike Light</var>
+<status status="PASS" start="2026-04-13T22:56:29.893243" elapsed="0.002097"/>
+</iter>
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.896974" level="INFO">Current page contains element 'xpath=//div[text()='Sauce Labs Bolt T-Shirt']'.</msg>
+<arg>xpath=//div[text()='${name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.895518" elapsed="0.001508"/>
+</kw>
+<var name="${name}">Sauce Labs Bolt T-Shirt</var>
+<status status="PASS" start="2026-04-13T22:56:29.895436" elapsed="0.001630"/>
+</iter>
+<var>${name}</var>
+<value>@{PRODUCT_NAMES}</value>
+<status status="PASS" start="2026-04-13T22:56:29.890548" elapsed="0.006554"/>
+</for>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.897326" level="INFO">Clicking button 'id=checkout'.</msg>
+<arg>id=checkout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.897212" elapsed="0.066923"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.964467" level="INFO">Typing text 'John' into text field 'id=first-name'.</msg>
+<arg>id=first-name</arg>
+<arg>John</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.964293" elapsed="0.012646"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.977299" level="INFO">Typing text 'Doe' into text field 'id=last-name'.</msg>
+<arg>id=last-name</arg>
+<arg>Doe</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.977102" elapsed="0.011535"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:29.988990" level="INFO">Typing text '600001' into text field 'id=postal-code'.</msg>
+<arg>id=postal-code</arg>
+<arg>600001</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:29.988804" elapsed="0.014637"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:30.003845" level="INFO">Clicking button 'id=continue'.</msg>
+<arg>id=continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:30.003650" elapsed="0.064071"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:30.071506" level="INFO">Current page contains element 'xpath=//div[@class='inventory_item_name' and contains(text(),'Sauce Labs Backpack')]'.</msg>
+<arg>xpath=//div[@class='inventory_item_name' and contains(text(),'Sauce Labs Backpack')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-13T22:56:30.068216" elapsed="0.003376"/>
+</kw>
+<var name="${product}">sauce-labs-backpack</var>
+<status status="PASS" start="2026-04-13T22:56:30.068086" elapsed="0.003574"/>
+</iter>
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:30.074161" level="INFO">Current page contains element 'xpath=//div[@class='inventory_item_name' and contains(text(),'Sauce Labs Backpack')]'.</msg>
+<arg>xpath=//div[@class='inventory_item_name' and contains(text(),'Sauce Labs Backpack')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-13T22:56:30.071898" elapsed="0.002338"/>
+</kw>
+<var name="${product}">sauce-labs-bike-light</var>
+<status status="PASS" start="2026-04-13T22:56:30.071789" elapsed="0.002504"/>
+</iter>
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:30.076040" level="INFO">Current page contains element 'xpath=//div[@class='inventory_item_name' and contains(text(),'Sauce Labs Backpack')]'.</msg>
+<arg>xpath=//div[@class='inventory_item_name' and contains(text(),'Sauce Labs Backpack')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-04-13T22:56:30.074512" elapsed="0.001570"/>
+</kw>
+<var name="${product}">sauce-labs-bolt-t-shirt</var>
+<status status="PASS" start="2026-04-13T22:56:30.074399" elapsed="0.001717"/>
+</iter>
+<var>${product}</var>
+<value>@{PRODUCTS}</value>
+<status status="PASS" start="2026-04-13T22:56:30.067862" elapsed="0.008286"/>
+</for>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-04-13T22:56:30.077663" level="INFO">${count} = 3</msg>
+<var>${count}</var>
+<arg>xpath=//div[@class='cart_quantity' and text()='1']</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-04-13T22:56:30.076231" elapsed="0.001457"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-04-13T22:56:30.077987" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>3</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-04-13T22:56:30.077774" elapsed="0.000257"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-13T22:56:30.078102" elapsed="2.637690"/>
+</kw>
+<status status="PASS" start="2026-04-13T22:56:18.677674" elapsed="14.038306"/>
+</kw>
+<status status="PASS" start="2026-04-13T22:56:18.676623" elapsed="14.040192"/>
 </test>
 <doc>My first robot framework</doc>
-<status status="FAIL" start="2026-04-04T10:00:30.574834" elapsed="0.307556"/>
+<status status="PASS" start="2026-04-13T22:56:18.524071" elapsed="14.193967"/>
 </suite>
-<status status="FAIL" start="2026-04-04T10:00:30.516706" elapsed="0.369396"/>
+<status status="PASS" start="2026-04-13T22:56:18.491862" elapsed="14.227012"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Virtualenvironment" id="s1" pass="0" fail="1" skip="0">Virtualenvironment</stat>
-<stat name="Mythirdrobotframeworktask20guvi" id="s1-s1" pass="0" fail="1" skip="0">Virtualenvironment.Mythirdrobotframeworktask20guvi</stat>
+<stat name="Virtualenvironment" id="s1" pass="1" fail="0" skip="0">Virtualenvironment</stat>
+<stat name="Mythirdrobotframeworktask20guvi" id="s1-s1" pass="1" fail="0" skip="0">Virtualenvironment.Mythirdrobotframeworktask20guvi</stat>
 </suite>
 </statistics>
 <errors>
