@@ -66,6 +66,8 @@ b = 1
 print(a)
 print(b)
 
+
+
 for i in range(8):
     c = fib(a, b)
     print(" After the fibonacci series result", c)
